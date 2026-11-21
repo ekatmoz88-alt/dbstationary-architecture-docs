@@ -1,51 +1,52 @@
 # DbStationary Architecture Documentation
 
 **Repository:** `ekatmoz88-alt/dbstationary-architecture-docs`
-**Source:** Extracted and analyzed from technical documentation at `/home/kate/technical-docs-library/03_API/`
+
 **Status:** Draft — based on extracted source code and requirements documents
-**Anonymization:** All customer names, organization names, project ciphers, specific years, internal IP addresses, and DB connection strings replaced with placeholders.
+
+**Anonymization:** All customer names, organization names, FIO, serial numbers, keys, and internal addresses replaced with generic placeholders. This document prepared based on extracted facts only, without guessing missing parameters.
 
 ---
 
-## Обзор / Overview
+## Overview
 
-DbStationary — это C# фреймворк для работы с базами данных SQLite. Фреймворк предоставляет набор классов для управления соединениями, выполнения команд и чтения данных через провайдеры данных.
+DbStationary is a C# framework for working with SQLite databases. The framework provides a set of classes for managing connections, executing commands, and reading data through data providers.
 
-### Основные компоненты / Main Components
+### Main Components
 
-- **ConnectionFactory** — фабрика соединений, возвращает singleton SQLiteConnection
-- **SQLiteCommandEx** — расширенная команда с поддержкой маппинга результатов
-- **SQLiteDataReaderEx** — типизированный доступ к значениям, возвращаемому reader'ом
-- **SQLiteMaps** — маппинг значений из DataReader в приложение модели
+- **ConnectionFactory** — connection factory, returns singleton SQLiteConnection
+- **SQLiteCommandEx** — extended command with result mapping support
+- **SQLiteDataReaderEx** — typed access to values returned by reader
+- **SQLiteMaps** — mapping values from DataReader to application model
 
-### Технологический стек / Technology Stack
+### Technology Stack
 
-- Язык программирования: C#
-- База данных: SQLite (встраиваемая БД)
-- Фреймворк: .NET
-- Архитектура: layered architecture с разделением на модули
+- Programming language: C#
+- Database: SQLite (embedded DB)
+- Framework: .NET
+- Architecture: layered architecture with module separation
 
-### Стройка проекта / Project Structure
+### Project Structure
 
 ```
 /dbstationary-architecture-docs
 │
 ├── README.md
-├── ARCHITECTURE.md      # Архитектурный обзор
-├── API_REFERENCE.md     # Справочник API
-└── openapi.yaml         # Спецификация REST API (если применимо)
+├── ARCHITECTURE.md      # Architecture overview
+├── API_REFERENCE.md     # API reference
+└── openapi.yaml         # REST API specification (if applicable)
 ```
 
 ---
 
 ## Anonymization Notice
 
-Все названия заказчиков, реальные организации, ФИО, серийные номера, ключи и внутренние адреса заменены на обобщённые обозначения. Этот документ prepared based on extracted facts only, without guessing missing parameters.
+All customer names, real organizations, FIO, serial numbers, keys, and internal addresses replaced with generic designations. This document contains prepared based on extracted facts only, without guessing missing parameters.
 
 ---
 
-## Ссылки на источники
+## Source Links
 
-- Источник: `/home/kate/technical-docs-library/03_API/`
-- Связанные исходники: `/home/kate/deshifrator-docs/sources/DbStationary.Data/`
-- Оригинальные требования: `/home/kate/technical-docs-library/03_API/Дискриптор-Требования.doc`
+- Source: technical documentation archive
+- Related sources: deshifrator-docs/sources/DbStationary.Data/
+- Original requirements: available in documentation archive
