@@ -1,0 +1,13 @@
+# Site settings
+title: DbStationary Architecture Documentation
+description: C# framework for working with SQLite databases
+
+# Build settings
+markdown: kramdown
+
+# Default layout
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
