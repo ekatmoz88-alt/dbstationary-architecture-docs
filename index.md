@@ -1,22 +1,2 @@
----
-title: DbStationary Architecture Documentation
----
-
-# DbStationary Architecture Documentation
-
-Architecture and API documentation for the DbStationary C# framework for working with SQLite databases.
-
-## Documentation
-
-- [API reference](API_REFERENCE.html)
-
-## Scope
-
-The documentation covers the framework components identified in the source review:
-
-- `ConnectionFactory`
-- `SQLiteCommandEx`
-- `SQLiteDataReaderEx`
-- `SQLiteMaps`
-
-**Status:** Draft. The documentation is based on extracted source code and requirements materials. Unverified implementation details are not inferred.
+---\ntitle: DbStationary Architecture Documentation\n---\n\n# DbStationary Architecture Documentation\n\nArchitecture and API documentation for the DbStationary C# framework for working with SQLite databases.\n\n## Documentation\n\n- [Architecture overview](ARCHITECTURE.html)\n- [API reference](API_REFERENCE.html)\n\n## Scope\n\nThe documentation covers the framework components identified in the source review:\n\n- `ConnectionFactory`\n- `SQLiteCommandEx`\n- `SQLiteDataReaderEx`\n- `SQLiteMaps`\n\n**Status:** Draft. The documentation is based on extracted source code and requirements materials. Unverified implementation details are not inferred.\\
+n
