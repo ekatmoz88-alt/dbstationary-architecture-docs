@@ -41,33 +41,49 @@
     </main>
   </div>
 
-  <!-- Mermaid.js v10: preserve rendering of fenced Mermaid diagrams. -->
+  <!-- Render fenced Mermaid blocks as SVG with Mermaid.js v10. -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var codeBlocks = document.querySelectorAll('div.language-mermaid code, pre code.language-mermaid');
+    document.addEventListener('DOMContentLoaded', async function() {
+      // Kramdown wraps fenced blocks in:
+      // div.language-mermaid > div.highlight > pre > code
+      // Replace the complete wrapper, not just its inner code element.
+      document.querySelectorAll('div.language-mermaid').forEach(function(wrapper) {
+        var code = wrapper.querySelector('pre code, code');
+        if (!code) return;
 
-      codeBlocks.forEach(function(block) {
-        var content = block.textContent;
-        var mermaidDiv = document.createElement('div');
-        mermaidDiv.className = 'mermaid';
-        mermaidDiv.textContent = content;
+        var diagram = document.createElement('pre');
+        diagram.className = 'mermaid';
+        diagram.textContent = code.textContent.trim();
+        wrapper.replaceWith(diagram);
+      });
 
-        if (block.parentNode.tagName === 'PRE') {
-          block.parentNode.replaceChild(mermaidDiv, block);
-        } else if (block.parentNode.classList && block.parentNode.classList.contains('language-mermaid')) {
-          block.parentNode.replaceChild(mermaidDiv, block);
-        } else {
-          block.replaceWith(mermaidDiv);
-        }
+      // Also support Markdown renderers that put the language class on <pre>.
+      document.querySelectorAll('pre.language-mermaid').forEach(function(block) {
+        block.classList.remove('language-mermaid');
+        block.classList.add('mermaid');
+      });
+
+      // Support renderers that put the language class directly on <code>.
+      document.querySelectorAll('pre code.language-mermaid').forEach(function(code) {
+        var diagram = document.createElement('pre');
+        diagram.className = 'mermaid';
+        diagram.textContent = code.textContent.trim();
+        code.parentElement.replaceWith(diagram);
       });
 
       mermaid.initialize({
         startOnLoad: false,
-        elementSelector: '.mermaid',
-        theme: 'default'
+        securityLevel: 'strict',
+        theme: 'default',
+        flowchart: { htmlLabels: false }
       });
-      mermaid.run();
+
+      try {
+        await mermaid.run({ querySelector: 'pre.mermaid' });
+      } catch (error) {
+        console.error('Mermaid rendering failed:', error);
+      }
     });
   </script>
 </body>
