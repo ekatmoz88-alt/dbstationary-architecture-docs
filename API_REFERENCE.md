@@ -1,3 +1,7 @@
+---
+title: DbStationary API Reference
+---
+
 # DbStationary API Reference / Справочник API DbStationary
 
 **Repository:** `ekatmoz88-alt/dbstationary-architecture-docs`
