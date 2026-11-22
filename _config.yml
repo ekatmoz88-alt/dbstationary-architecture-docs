@@ -2,6 +2,10 @@
 title: DbStationary Architecture Documentation
 description: C# framework for working with SQLite databases
 
+# GitHub Pages project-site path
+baseurl: /dbstationary-architecture-docs
+url: https://ekatmoz88-alt.github.io
+
 # Build settings
 markdown: kramdown
 
