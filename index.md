@@ -8,7 +8,6 @@ Architecture and API documentation for the DbStationary C# framework for working
 
 ## Documentation
 
-- [Architecture overview](ARCHITECTURE.html)
 - [API reference](API_REFERENCE.html)
 
 ## Scope
