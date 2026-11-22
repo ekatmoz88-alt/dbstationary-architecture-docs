@@ -1,3 +1,7 @@
+---
+title: DbStationary Documentation README
+---
+
 # DbStationary Architecture Documentation
 
 **Repository:** `ekatmoz88-alt/dbstationary-architecture-docs`
