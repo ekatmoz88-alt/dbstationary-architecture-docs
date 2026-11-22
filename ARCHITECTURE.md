@@ -1,3 +1,7 @@
+---
+title: DbStationary Architecture Overview
+---
+
 # DbStationary Architecture Overview / Обзор архитектуры DbStationary
 
 **Repository:** `ekatmoz88-alt/dbstationary-architecture-docs`
